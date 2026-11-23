@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arefin | Travel Stories from Home & Abroad</title>
+  <meta name="description" content="Arefin's travel journal: 55 districts of Bangladesh and 25+ countries explored." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { display: ['Georgia', 'serif'], sans: ['system-ui', 'sans-serif'] },
+          colors: { sand: '#faf6ef', ink: '#1c2b2d', teal: { 600: '#0f766e', 700: '#115e59' }, sun: '#f59e0b' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-sand text-ink font-sans antialiased">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-sand/90 backdrop-blur border-b border-black/5">
+    <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#home" class="font-display text-xl font-bold">Arefin<span class="text-sun">.</span></a>
+      <ul class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a class="hover:text-teal-600" href="#stats">Journey</a></li>
+        <li><a class="hover:text-teal-600" href="#abroad">Abroad</a></li>
+        <li><a class="hover:text-teal-600" href="#bangladesh">Bangladesh</a></li>
+        <li><a class="hover:text-teal-600" href="#stories">Stories</a></li>
+        <li><a class="hover:text-teal-600" href="#contact">Contact</a></li>
+      </ul>
+      <button id="menuBtn" class="md:hidden p-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <ul id="mobileMenu" class="hidden md:hidden px-5 pb-4 space-y-3 text-sm font-medium">
+      <li><a href="#stats">Journey</a></li>
+      <li><a href="#abroad">Abroad</a></li>
+      <li><a href="#bangladesh">Bangladesh</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-600 to-emerald-500 text-white">
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-sun/30 blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-20 w-96 h-96 rounded-full bg-white/10 blur-3xl"></div>
+    <div class="relative max-w-6xl mx-auto px-5 py-24 md:py-36">
+      <p class="uppercase tracking-[0.3em] text-sm text-amber-200 mb-4">Travel Journal</p>
+      <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight max-w-3xl">
+        Hi, I'm Arefin. I chase horizons, <span class="text-amber-300">near and far.</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/85 max-w-2xl">
+        From the hills and rivers of Bangladesh to 25+ countries across the world, this is where I keep my maps, memories and tips for fellow wanderers.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#stories" class="px-6 py-3 rounded-full bg-sun text-ink font-semibold hover:bg-amber-400 transition">Read my stories</a>
+        <a href="#bangladesh" class="px-6 py-3 rounded-full border border-white/60 hover:bg-white/10 transition">Explore Bangladesh</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats" class="max-w-6xl mx-auto px-5 -mt-12 relative z-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <div class="text-4xl font-display font-bold text-teal-600" data-count="55">0</div>
+        <div class="text-sm mt-1 text-ink/70">Districts in Bangladesh</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <div class="text-4xl font-display font-bold text-teal-600"><span data-count="25">0</span>+</div>
+        <div class="text-sm mt-1 text-ink/70">Countries visited</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <div class="text-4xl font-display font-bold text-teal-600">∞</div>
+        <div class="text-sm mt-1 text-ink/70">Memories made</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <div class="text-4xl font-display font-bold text-teal-600">Next?</div>
+        <div class="text-sm mt-1 text-ink/70">Always planning</div>
+      </div>
+    </div>
+    <div class="mt-8 bg-white rounded-2xl shadow p-6">
+      <div class="flex justify-between text-sm font-medium mb-2">
+        <span>Bangladesh explored</span><span>55 / 64 districts (≈86%)</span>
+      </div>
+      <div class="h-3 rounded-full bg-black/10 overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-teal-600 to-sun rounded-full" style="width:86%"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABROAD -->
+  <section id="abroad" class="max-w-6xl mx-auto px-5 py-24">
+    <h2 class="font-display text-3xl md:text-4xl font-bold">Around the World</h2>
+    <p class="mt-3 text-ink/70 max-w-2xl">Filter by region. These are sample cards; edit the <code class="bg-black/5 px-1 rounded">countries</code> list at the bottom of this file with your own trips.</p>
+
+    <div id="regionFilters" class="mt-8 flex flex-wrap gap-2"></div>
+    <div id="countryGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- BANGLADESH -->
+  <section id="bangladesh" class="bg-white py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="font-display text-3xl md:text-4xl font-bold">My Bangladesh Checklist</h2>
+      <p class="mt-3 text-ink/70 max-w-2xl">Tap a district to mark it visited. Your selection is saved in this browser. Visited: <strong id="distCount" class="text-teal-600">0</strong> / 64</p>
+      <div id="districtGrid" class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"></div>
+      <button id="resetDistricts" class="mt-6 text-sm underline text-ink/60 hover:text-ink">Reset checklist</button>
+    </div>
+  </section>
+
+  <!-- STORIES -->
+  <section id="stories" class="max-w-6xl mx-auto px-5 py-24">
+    <h2 class="font-display text-3xl md:text-4xl font-bold">Latest Stories</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-8">
+      <article class="group bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+        <div class="h-44 bg-gradient-to-br from-emerald-400 to-teal-700"></div>
+        <div class="p-6">
+          <span class="text-xs font-semibold uppercase text-sun">Bangladesh</span>
+          <h3 class="font-display text-xl font-bold mt-1 group-hover:text-teal-600">A weekend in the hills</h3>
+          <p class="text-sm text-ink/70 mt-2">Short intro to your story goes here. Share routes, costs and the moment that stayed with you.</p>
+        </div>
+      </article>
+      <article class="group bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+        <div class="h-44 bg-gradient-to-br from-amber-300 to-orange-500"></div>
+        <div class="p-6">
+          <span class="text-xs font-semibold uppercase text-sun">Abroad</span>
+          <h3 class="font-display text-xl font-bold mt-1 group-hover:text-teal-600">First solo trip abroad</h3>
+          <p class="text-sm text-ink/70 mt-2">Short intro to your story goes here. What you packed, what you learned, what you'd do differently.</p>
+        </div>
+      </article>
+      <article class="group bg-white rounded-2xl overflow-hidden shadow hover:shadow-xl transition">
+        <div class="h-44 bg-gradient-to-br from-sky-400 to-indigo-600"></div>
+        <div class="p-6">
+          <span class="text-xs font-semibold uppercase text-sun">Tips</span>
+          <h3 class="font-display text-xl font-bold mt-1 group-hover:text-teal-600">Budget travel tips</h3>
+          <p class="text-sm text-ink/70 mt-2">Short intro to your story goes here. Visas, flights, stays and food on a sensible budget.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-ink text-white py-24">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-bold">Planning a trip? Let's talk.</h2>
+      <p class="mt-4 text-white/70">Questions, collaborations or just swapping travel stories, drop me a line.</p>
+      <form class="mt-10 grid gap-4 text-left" onsubmit="event.preventDefault(); this.reset(); alert('Form is a demo. Connect it to Formspree or your backend.');">
+        <input required type="text" placeholder="Your name" class="w-full rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-sun" />
+        <input required type="email" placeholder="Your email" class="w-full rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-sun" />
+        <textarea required rows="4" placeholder="Your message" class="w-full rounded-xl px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-sun"></textarea>
+        <button class="rounded-xl bg-sun text-ink font-semibold py-3 hover:bg-amber-400 transition">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="text-center text-sm text-ink/60 py-8">© <span id="yr"></span> Arefin. Made with wanderlust.</footer>
+
+  <script>
+    // ---------- EDIT YOUR TRIPS HERE ----------
+    const countries = [
+      { name: 'Country One',   flag: '🌏', region: 'Asia',    year: 2023, note: 'Replace with your own trip highlight.' },
+      { name: 'Country Two',   flag: '🌍', region: 'Asia',    year: 2024, note: 'Replace with your own trip highlight.' },
+      { name: 'Country Three', flag: '🌍', region: 'Europe',  year: 2022, note: 'Replace with your own trip highlight.' },
+      { name: 'Country Four',  flag: '🌎', region: 'Americas',year: 2021, note: 'Replace with your own trip highlight.' },
+      { name: 'Country Five',  flag: '🌍', region: 'Africa',  year: 2020, note: 'Replace with your own trip highlight.' },
+      { name: 'Country Six',   flag: '🌏', region: 'Asia',    year: 2019, note: 'Replace with your own trip highlight.' },
+    ];
+
+    const districts = ["Bagerhat","Bandarban","Barguna","Barishal","Bhola","Bogura","Brahmanbaria","Chandpur","Chapai Nawabganj","Chattogram","Chuadanga","Cox's Bazar","Cumilla","Dhaka","Dinajpur","Faridpur","Feni","Gaibandha","Gazipur","Gopalganj","Habiganj","Jamalpur","Jashore","Jhalakathi","Jhenaidah","Joypurhat","Khagrachhari","Khulna","Kishoreganj","Kurigram","Kushtia","Lakshmipur","Lalmonirhat","Madaripur","Magura","Manikganj","Meherpur","Moulvibazar","Munshiganj","Mymensingh","Naogaon","Narail","Narayanganj","Narsingdi","Natore","Netrokona","Nilphamari","Noakhali","Pabna","Panchagarh","Patuakhali","Pirojpur","Rajbari","Rajshahi","Rangamati","Rangpur","Satkhira","Shariatpur","Sherpur","Sirajganj","Sunamganj","Sylhet","Tangail","Thakurgaon"];
+    // -------------------------------------------
+
+    // Mobile menu
+    const mm = document.getElementById('mobileMenu');
+    document.getElementById('menuBtn').onclick = () => mm.classList.toggle('hidden');
+    mm.querySelectorAll('a').forEach(a => a.onclick = () => mm.classList.add('hidden'));
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Count-up
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = +el.dataset.count; let n = 0;
+      const step = () => { n += Math.max(1, Math.round(target / 40)); if (n >= target) n = target; el.textContent = n; if (n < target) requestAnimationFrame(step); };
+      step();
+    });
+
+    // Countries + filters
+    const grid = document.getElementById('countryGrid');
+    const filters = document.getElementById('regionFilters');
+    let active = 'All';
+    function renderCountries() {
+      grid.innerHTML = countries.filter(c => active === 'All' || c.region === active).map(c => `
+        <div class="bg-white rounded-2xl shadow p-6 hover:-translate-y-1 hover:shadow-xl transition">
+          <div class="flex items-center justify-between">
+            <span class="text-4xl">${c.flag}</span>
+            <span class="text-xs font-semibold bg-teal-600/10 text-teal-700 px-3 py-1 rounded-full">${c.region}</span>
+          </div>
+          <h3 class="font-display text-xl font-bold mt-4">${c.name}</h3>
+          <p class="text-xs text-ink/50">${c.year}</p>
+          <p class="text-sm text-ink/70 mt-2">${c.note}</p>
+        </div>`).join('');
+    }
+    function renderFilters() {
+      const regions = ['All', ...new Set(countries.map(c => c.region))];
+      filters.innerHTML = regions.map(r => `<button data-r="${r}" class="px-4 py-2 rounded-full text-sm font-medium border ${r === active ? 'bg-teal-600 text-white border-teal-600' : 'bg-white border-black/10 hover:border-teal-600'}">${r}</button>`).join('');
+      filters.querySelectorAll('button').forEach(b => b.onclick = () => { active = b.dataset.r; renderFilters(); renderCountries(); });
+    }
+    renderFilters(); renderCountries();
+
+    // District checklist (saved in localStorage)
+    const KEY = 'arefin-districts';
+    let visited = new Set();
+    try { visited = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) {}
+    const dg = document.getElementById('districtGrid');
+    function renderDistricts() {
+      dg.innerHTML = districts.map(d => `<button data-d="${d}" class="px-3 py-2 rounded-lg text-sm border transition ${visited.has(d) ? 'bg-teal-600 text-white border-teal-600' : 'bg-sand border-black/10 hover:border-teal-600'}">${d}</button>`).join('');
+      document.getElementById('distCount').textContent = visited.size;
+      dg.querySelectorAll('button').forEach(b => b.onclick = () => {
+        visited.has(b.dataset.d) ? visited.delete(b.dataset.d) : visited.add(b.dataset.d);
+        try { localStorage.setItem(KEY, JSON.stringify([...visited])); } catch (e) {}
+        renderDistricts();
+      });
+    }
+    document.getElementById('resetDistricts').onclick = () => { visited.clear(); try { localStorage.removeItem(KEY); } catch (e) {} renderDistricts(); };
+    renderDistricts();
+  </script>
+</body>
+</html>
