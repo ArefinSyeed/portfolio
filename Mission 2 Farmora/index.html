@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmora | Farm-Fresh Dates, Every Variety</title>
+  <meta name="description" content="Farmora sells dates only: Ajwa, Medjool, Sukkari, Khalas and more, packed fresh from the palm groves." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23ffe08a' stroke='%23ffb02e' stroke-width='3'/%3E%3Cpath d='M30 52Q33 40 29 27H35Q38 40 36 52Z' fill='%239a5b2b'/%3E%3Cpath d='M32 27Q21 11 5 18Q20 19 32 27ZM32 27Q43 11 59 18Q44 19 32 27ZM32 27Q27 15 33 7Q39 16 32 27Z' fill='%2326a65b'/%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { display: ['Georgia', 'Cambria', 'serif'], sans: ['system-ui', 'Segoe UI', 'sans-serif'] },
+          colors: {
+            paper: '#fffbf2', soil: '#3a2b1c', palm: '#26884c', palmdark: '#1b6b3a',
+            clay: '#ff7a45', gold: '#ffc233', straw: '#fff0c9'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Gamchha-style woven check border, a rural Bengal motif */
+    .weave { height: 12px; background:
+      repeating-linear-gradient(90deg, #ff7a45 0 14px, #fffbf2 14px 18px, #26884c 18px 32px, #fffbf2 32px 36px, #ffc233 36px 50px, #fffbf2 50px 54px); }
+    .grain { background-image: radial-gradient(rgba(255,194,51,.22) 1px, transparent 1px); background-size: 14px 14px; }
+    .ph { background: linear-gradient(135deg, #ffe3a3, #ffc97a); }
+    .ph img { width: 100%; height: 100%; object-fit: cover; }
+    @keyframes pop { 0%{transform:scale(1)} 50%{transform:scale(1.4)} 100%{transform:scale(1)} }
+    .pop { animation: pop .3s ease; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+  </style>
+</head>
+<body class="bg-paper text-soil font-sans antialiased grain">
+  <!-- FARMORA LOGO MARK (reusable) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs><clipPath id="fmClip"><circle cx="32" cy="32" r="30"/></clipPath></defs>
+    <symbol id="logoMark" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="30" fill="#ffe08a"/>
+      <circle cx="32" cy="32" r="30" fill="none" stroke="#ffb02e" stroke-width="2.5"/>
+      <g clip-path="url(#fmClip)">
+        <circle cx="48" cy="17" r="7" fill="#ff9f43" opacity=".9"/>
+        <path d="M-2 47 Q18 38 34 45 T66 43 V70 H-2Z" fill="#7fd48f"/>
+        <path d="M-2 53 Q20 46 38 52 T66 51 V70 H-2Z" fill="#3fb26a"/>
+      </g>
+      <path d="M30.5 52 Q33 40 29.5 27 L34.5 27 Q38 40 36 52Z" fill="#9a5b2b"/>
+      <g fill="#26a65b" stroke="#1b6b3a" stroke-width=".6" stroke-linejoin="round">
+        <path d="M32 27 Q21 11 5 18 Q20 19 32 27Z"/>
+        <path d="M32 27 Q43 11 59 18 Q44 19 32 27Z"/>
+        <path d="M32 27 Q22 21 12 32 Q25 27 32 27Z"/>
+        <path d="M32 27 Q42 21 52 32 Q39 27 32 27Z"/>
+        <path d="M32 27 Q27 15 33 7 Q39 16 32 27Z"/>
+      </g>
+      <g fill="#e2571f"><ellipse cx="28.5" cy="31" rx="2.3" ry="3.4"/><ellipse cx="32.5" cy="32.5" rx="2.3" ry="3.4"/><ellipse cx="36.5" cy="31" rx="2.3" ry="3.4"/></g>
+      <g fill="#fff" opacity=".7"><ellipse cx="27.8" cy="29.8" rx=".7" ry="1.1"/><ellipse cx="31.8" cy="31.3" rx=".7" ry="1.1"/><ellipse cx="35.8" cy="29.8" rx=".7" ry="1.1"/></g>
+    </symbol>
+  </svg>
+
+
+  <!-- ANNOUNCEMENT -->
+  <div class="bg-gold text-soil font-semibold text-xs sm:text-sm text-center py-2">🌴 Dates only. Every variety, packed fresh &nbsp;•&nbsp; Free delivery over ৳3,000</div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b-2 border-soil/10">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center gap-4">
+      <button id="menuBtn" class="lg:hidden p-2 -ml-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="#home" class="flex items-center gap-2.5" aria-label="Farmora home">
+        <svg class="w-11 h-11 shrink-0" aria-hidden="true"><use href="#logoMark"/></svg>
+        <span class="leading-none">
+          <span class="block font-display text-2xl sm:text-3xl font-bold tracking-tight"><span class="text-palm">Far</span><span class="text-clay">mora</span></span>
+          <span class="block text-[9px] sm:text-[10px] font-bold tracking-[0.28em] uppercase text-soil/60 mt-1">Fresh Dates · Grove to Home</span>
+        </span>
+      </a>
+      <nav class="hidden lg:flex ml-6 gap-6 text-sm font-semibold">
+        <a class="hover:text-clay" href="#home">Home</a>
+        <a class="hover:text-clay" href="#shop">Our Dates</a>
+        <a class="hover:text-clay" href="#farm">Farm Story</a>
+        <a class="hover:text-clay" href="#guide">Date Guide</a>
+        <a class="hover:text-clay" href="#gifts">Gift Boxes</a>
+        <a class="hover:text-clay" href="#reviews">Reviews</a>
+        <a class="hover:text-clay" href="#contact">Contact</a>
+      </nav>
+      <form id="searchForm" class="hidden md:flex flex-1 max-w-xs ml-auto items-center bg-white border-2 border-soil/15 rounded-full px-4">
+        <input id="searchInput" type="search" placeholder="Search Ajwa, Medjool…" class="flex-1 bg-transparent py-2 text-sm focus:outline-none" />
+        <svg class="w-5 h-5 text-palm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </form>
+      <div class="flex items-center gap-1 ml-auto md:ml-2">
+        <button id="searchToggle" class="md:hidden p-2" aria-label="Search">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+        <button id="cartBtn" class="relative p-2 hover:text-clay" aria-label="Open basket">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1.2 11H6.2L5 8zM9 8a3 3 0 016 0"/></svg>
+          <span id="cartCount" class="absolute top-0 right-0 min-w-[1.15rem] h-[1.15rem] px-1 rounded-full bg-clay text-white text-[11px] font-bold flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileSearch" class="hidden md:hidden px-4 pb-3">
+      <input id="searchInputM" type="search" placeholder="Search dates…" class="w-full bg-white border-2 border-soil/15 rounded-full px-4 py-2 text-sm focus:outline-none" />
+    </div>
+    <nav id="mobileMenu" class="hidden lg:hidden border-t border-soil/10 px-4 py-4 space-y-3 text-sm font-semibold">
+      <a class="block" href="#home">Home</a><a class="block" href="#shop">Our Dates</a><a class="block" href="#farm">Farm Story</a>
+      <a class="block" href="#guide">Date Guide</a><a class="block" href="#gifts">Gift Boxes</a><a class="block" href="#reviews">Reviews</a><a class="block" href="#contact">Contact</a>
+    </nav>
+    <div class="weave"></div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden text-soil">
+    <div class="ph absolute inset-0"><img data-r="WClKJ2cW99Y" alt="Green rice fields of a village at the edge of the countryside" /></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/5"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-20 md:py-32 grid md:grid-cols-5 gap-10 items-center">
+      <div class="md:col-span-3">
+        <p class="inline-block bg-gold text-soil text-xs font-bold uppercase tracking-[0.75em] px-3 py-1 mb-5">Only Dates</p>
+        <h1 class="font-display text-4xl sm:text-6xl font-bold leading-[1.05]">From the palm grove<br/>to your <span class="text-clay italic">village table.</span></h1>
+        <p class="mt-6 text-soil/80 max-w-xl text-lg">Farmora sells one thing and does it well: dates. Soft Ajwa, caramel Medjool, golden Sukkari and many more, handpicked, sorted by hand and packed fresh.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#shop" class="bg-gold hover:bg-amber-400 text-soil font-bold px-8 py-3 rounded-full transition">Shop All Dates</a>
+          <a href="#farm" class="border-2 border-soil/50 hover:bg-white font-semibold px-8 py-3 rounded-full transition">Our Farm Story</a>
+        </div>
+        <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-2 text-sm text-soil/80">
+          <li>✔ 12+ varieties</li><li>✔ Handpicked &amp; hand-sorted</li><li>✔ No added sugar or preservatives</li>
+        </ul>
+      </div>
+      <div class="hidden md:block md:col-span-2 relative">
+        <div class="ph aspect-[4/5] rounded-[2rem] overflow-hidden border-8 border-paper shadow-2xl rotate-2"><img data-d="1648178630847-b857b1a6f45d" alt="A bowl of dates on a wooden table" /></div>
+        <div class="ph absolute -bottom-6 -left-8 w-40 h-40 rounded-full overflow-hidden border-8 border-paper shadow-xl -rotate-3"><img data-d="1642073537056-20608544f111" alt="Dates ripening on the palm" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="bg-straw border-y-2 border-soil/10">
+    <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm font-semibold">
+      <div>🌴 Palm-grove sourced</div><div>🤲 Hand-sorted by size</div><div>📦 Sealed fresh packs</div><div>🚚 Delivery across Bangladesh</div>
+    </div>
+  </section>
+
+  <!-- SHOP BY TASTE -->
+  <section class="max-w-7xl mx-auto px-4 pt-20">
+    <div class="text-center max-w-xl mx-auto">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold">Find Your Kind of Date</h2>
+      <p class="mt-3 text-soil/70">Every date is different. Start with how you like to eat it.</p>
+    </div>
+    <div class="mt-10 grid sm:grid-cols-3 gap-5">
+      <button data-type="Soft" class="tasteCard group ph relative h-64 overflow-hidden text-left rounded-3xl">
+        <img data-d="1633677491262-0a51b9851f46" alt="Soft caramel dates" class="group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-soil/90 via-soil/20 to-transparent"></div>
+        <div class="absolute bottom-0 p-6 text-paper"><p class="font-display text-2xl font-bold">Soft &amp; Caramel</p><p class="text-sm text-paper/80">Ajwa, Medjool, Khalas, Sukkari…</p></div>
+      </button>
+      <button data-type="Semi-dry" class="tasteCard group ph relative h-64 overflow-hidden text-left rounded-3xl">
+        <img data-d="1648288718348-4b6d53755716" alt="Semi-dry chewy dates" class="group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-soil/90 via-soil/20 to-transparent"></div>
+        <div class="absolute bottom-0 p-6 text-paper"><p class="font-display text-2xl font-bold">Chewy &amp; Nutty</p><p class="text-sm text-paper/80">Deglet Noor, Mabroom, Khudri…</p></div>
+      </button>
+      <button data-type="Fresh" class="tasteCard group ph relative h-64 overflow-hidden text-left rounded-3xl">
+        <img data-d="1642073537056-20608544f111" alt="Fresh dates on the palm" class="group-hover:scale-110 transition duration-500" />
+        <div class="absolute inset-0 bg-gradient-to-t from-soil/90 via-soil/20 to-transparent"></div>
+        <div class="absolute bottom-0 p-6 text-paper"><p class="font-display text-2xl font-bold">Fresh &amp; Honeyed</p><p class="text-sm text-paper/80">Barhi and other fresh-season dates</p></div>
+      </button>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop" class="max-w-7xl mx-auto px-4 py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold">Our Dates</h2>
+        <p id="resultInfo" class="mt-2 text-soil/70">12 varieties, each with its own story and taste.</p>
+      </div>
+      <label class="text-sm font-semibold flex items-center gap-2">Sort
+        <select id="sortSel" class="bg-white border-2 border-soil/15 rounded-full px-4 py-2 text-sm focus:outline-none">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="sweet">Sweetest first</option>
+        </select>
+      </label>
+    </div>
+    <div id="filters" class="mt-6 flex flex-wrap gap-2"></div>
+    <div id="productGrid" class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"></div>
+    <p class="mt-6 text-xs text-soil/50">Photos are representative of each style of date. Prices shown are samples.</p>
+  </section>
+
+  <!-- FARM STORY -->
+  <section id="farm" class="bg-green-50 text-soil">
+    <div class="weave"></div>
+    <div class="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-2 gap-4 order-2 lg:order-1">
+        <div class="ph aspect-[3/4] rounded-3xl overflow-hidden"><img data-r="SfEelsxMD04" alt="Thatched village houses in a field" /></div>
+        <div class="ph aspect-[3/4] rounded-3xl overflow-hidden mt-10"><img data-r="FnxZF_i-iJM" alt="Rows of crops in a village field" /></div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <p class="text-clay font-semibold uppercase tracking-[0.25em] text-xs">Our Farm Story</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">Rooted in the countryside, built on trust.</h2>
+        <p class="mt-4 text-soil/75">Farmora began with a simple idea: dates should taste the way they do in the grove, not the way they do after months in a warehouse. We work with growers, harvest in season, and keep each variety separate so you always know what you are eating.</p>
+        <ol class="mt-8 space-y-5">
+          <li class="flex gap-4"><span class="shrink-0 w-10 h-10 rounded-full bg-gold text-soil font-bold flex items-center justify-center">1</span><div><h3 class="font-bold">Picked at the right time</h3><p class="text-sm text-soil/70">Bunches are harvested when each variety is ready, not before.</p></div></li>
+          <li class="flex gap-4"><span class="shrink-0 w-10 h-10 rounded-full bg-gold text-soil font-bold flex items-center justify-center">2</span><div><h3 class="font-bold">Sorted by hand</h3><p class="text-sm text-soil/70">Size, softness and color are checked by people, not left to chance.</p></div></li>
+          <li class="flex gap-4"><span class="shrink-0 w-10 h-10 rounded-full bg-gold text-soil font-bold flex items-center justify-center">3</span><div><h3 class="font-bold">Packed fresh</h3><p class="text-sm text-soil/70">Sealed in food-safe packs to lock in moisture and flavor.</p></div></li>
+          <li class="flex gap-4"><span class="shrink-0 w-10 h-10 rounded-full bg-gold text-soil font-bold flex items-center justify-center">4</span><div><h3 class="font-bold">Delivered to your door</h3><p class="text-sm text-soil/70">From our packing table to your home, anywhere in Bangladesh.</p></div></li>
+        </ol>
+      </div>
+    </div>
+    <div class="weave"></div>
+  </section>
+
+  <!-- DATE GUIDE -->
+  <section id="guide" class="max-w-7xl mx-auto px-4 py-20">
+    <div class="max-w-xl">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold">The Date Guide</h2>
+      <p class="mt-3 text-soil/70">A quick way to compare every variety by sweetness, texture and best use.</p>
+    </div>
+    <div class="mt-8 overflow-x-auto rounded-3xl border-2 border-soil/10 bg-white">
+      <table class="w-full text-sm min-w-[640px]">
+        <thead class="bg-straw text-left"><tr><th class="p-4">Date</th><th class="p-4">Texture</th><th class="p-4">Sweetness</th><th class="p-4">Taste</th><th class="p-4">Best for</th></tr></thead>
+        <tbody id="guideBody" class="divide-y divide-soil/10"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- GIFT BOXES -->
+  <section id="gifts" class="bg-straw py-20 border-y-2 border-soil/10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-xl mx-auto">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold">Gift &amp; Tasting Boxes</h2>
+        <p class="mt-3 text-soil/70">For Ramadan, weddings, Eid and every sweet occasion.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <article class="bg-paper rounded-3xl overflow-hidden border-2 border-soil/10 flex flex-col">
+          <div class="ph h-48"><img data-d="1700478934431-72290fbfa893" alt="Box of dates" /></div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display text-xl font-bold">Tasting Box</h3>
+            <p class="text-sm text-soil/70 mt-1 flex-1">Four varieties, 250g each. The best way to find your favorite.</p>
+            <p class="mt-4 text-2xl font-extrabold text-palm">৳2,200</p>
+            <button data-box="Tasting Box|2200|1700478934431-72290fbfa893" class="boxBtn mt-3 bg-palm hover:bg-palmdark text-paper font-bold py-2.5 rounded-full transition">Add to basket</button>
+          </div>
+        </article>
+        <article class="bg-paper rounded-3xl overflow-hidden border-2 border-gold flex flex-col shadow-xl relative">
+          <span class="absolute top-3 left-3 z-10 bg-gold text-soil text-[11px] font-bold uppercase px-3 py-1 rounded-full">Most gifted</span>
+          <div class="ph h-48"><img data-d="1663505305206-3b813471a568" alt="Premium date gift box" /></div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display text-xl font-bold">Premium Gift Hamper</h3>
+            <p class="text-sm text-soil/70 mt-1 flex-1">Ajwa, Medjool and Sukkari in a handcrafted gift box, 1.5kg total.</p>
+            <p class="mt-4 text-2xl font-extrabold text-palm">৳4,900</p>
+            <button data-box="Premium Gift Hamper|4900|1663505305206-3b813471a568" class="boxBtn mt-3 bg-gold hover:bg-amber-400 text-soil font-bold py-2.5 rounded-full transition">Add to basket</button>
+          </div>
+        </article>
+        <article class="bg-paper rounded-3xl overflow-hidden border-2 border-soil/10 flex flex-col">
+          <div class="ph h-48"><img data-d="1663505305791-87f2248df4ae" alt="Family iftar date box" /></div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-display text-xl font-bold">Family Iftar Box</h3>
+            <p class="text-sm text-soil/70 mt-1 flex-1">3kg of mixed everyday dates for the whole month of fasting.</p>
+            <p class="mt-4 text-2xl font-extrabold text-palm">৳3,400</p>
+            <button data-box="Family Iftar Box|3400|1663505305791-87f2248df4ae" class="boxBtn mt-3 bg-palm hover:bg-palmdark text-paper font-bold py-2.5 rounded-full transition">Add to basket</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="max-w-7xl mx-auto px-4 py-20">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-center">Sweet Words from Our Customers</h2>
+    <p class="text-center text-soil/50 text-sm mt-2">Sample reviews. Replace with real, verified feedback.</p>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <figure class="bg-white rounded-3xl p-7 border-2 border-soil/10"><div class="text-gold text-lg">★★★★★</div><blockquote class="mt-3 text-soil/80">"The Medjool dates were big, soft and tasted like caramel. Nothing like what I find in the market."</blockquote><figcaption class="mt-5 font-bold text-sm">Mohammad Abubakker Siddiq <span class="font-normal text-soil/50">· Dhaka</span></figcaption></figure>
+      <figure class="bg-white rounded-3xl p-7 border-2 border-soil/10"><div class="text-gold text-lg">★★★★★</div><blockquote class="mt-3 text-soil/80">"We ordered the family box for Ramadan. Fresh, clean and perfectly packed. Will order again."</blockquote><figcaption class="mt-5 font-bold text-sm">Md Rafiqul Islam <span class="font-normal text-soil/50">· Chattogram</span></figcaption></figure>
+      <figure class="bg-white rounded-3xl p-7 border-2 border-soil/10"><div class="text-gold text-lg">★★★★</div><blockquote class="mt-3 text-soil/80">"The tasting box helped me discover Sukkari. Now it is my favorite. The gift hamper was a hit too."</blockquote><figcaption class="mt-5 font-bold text-sm">Monirul Islam <span class="font-normal text-soil/50">· Sylhet</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-4 pb-20">
+    <h2 class="font-display text-3xl font-bold text-center">Good to Know</h2>
+    <div class="mt-8 space-y-3">
+      <details class="bg-white border-2 border-soil/10 rounded-2xl p-5"><summary class="cursor-pointer font-bold flex justify-between items-center">How should I store dates?<span class="chev transition">⌄</span></summary><p class="mt-3 text-sm text-soil/75">Keep them in a cool, dry place in an airtight container. For longer storage, the fridge keeps soft dates fresh for months.</p></details>
+      <details class="bg-white border-2 border-soil/10 rounded-2xl p-5"><summary class="cursor-pointer font-bold flex justify-between items-center">Which date is best for beginners?<span class="chev transition">⌄</span></summary><p class="mt-3 text-sm text-soil/75">Try Medjool for a soft, caramel-like taste, or Sukkari if you want something very sweet. The Tasting Box lets you try several.</p></details>
+      <details class="bg-white border-2 border-soil/10 rounded-2xl p-5"><summary class="cursor-pointer font-bold flex justify-between items-center">How long does delivery take?<span class="chev transition">⌄</span></summary><p class="mt-3 text-sm text-soil/75">Add your real delivery times here, for example 1–2 days in Dhaka and 3–5 days elsewhere in Bangladesh.</p></details>
+      <details class="bg-white border-2 border-soil/10 rounded-2xl p-5"><summary class="cursor-pointer font-bold flex justify-between items-center">Do you add sugar or preservatives?<span class="chev transition">⌄</span></summary><p class="mt-3 text-sm text-soil/75">Only say this if it is true for your products. Add your real quality and ingredient promise here.</p></details>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="bg-gradient-to-r from-gold to-orange-300 text-soil py-14">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold">Get first pick of every harvest</h2>
+      <form id="newsForm" class="mt-6 flex flex-col sm:flex-row gap-3">
+        <input id="newsEmail" required type="email" placeholder="info@farmora.com" class="flex-1 rounded-full px-5 py-3 text-soil focus:outline-none focus:ring-4 focus:ring-gold/60" />
+        <button class="bg-soil hover:bg-black text-paper font-bold rounded-full px-8 py-3 transition">Subscribe</button>
+      </form>
+      <p id="newsMsg" class="mt-3 text-sm font-semibold min-h-[1.25rem]"></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-straw text-soil/80">
+    <div class="weave"></div>
+    <div class="max-w-7xl mx-auto px-4 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+      <div>
+        <a href="#home" class="flex items-center gap-2.5"><svg class="w-12 h-12" aria-hidden="true"><use href="#logoMark"/></svg><span class="font-display text-3xl font-bold tracking-tight"><span class="text-palm">Far</span><span class="text-clay">mora</span></span></a>
+        <p class="mt-3">Farm-fresh dates in every variety. From the palm grove to your home.</p>
+        <div class="mt-4 flex gap-4 text-xs font-semibold"><a href="#" class="hover:text-clay">Facebook</a><a href="#" class="hover:text-clay">Instagram</a><a href="#" class="hover:text-clay">YouTube</a></div>
+      </div>
+      <div><h4 class="text-soil font-bold mb-3">Shop</h4><ul class="space-y-2"><li><a href="#shop" class="hover:text-clay">All dates</a></li><li><a href="#gifts" class="hover:text-clay">Gift boxes</a></li><li><a href="#guide" class="hover:text-clay">Date guide</a></li></ul></div>
+      <div><h4 class="text-soil font-bold mb-3">Help</h4><ul class="space-y-2"><li><a href="#" class="hover:text-clay">Shipping &amp; delivery</a></li><li><a href="#" class="hover:text-clay">Returns &amp; refunds</a></li><li><a href="#" class="hover:text-clay">Privacy policy</a></li><li><a href="#" class="hover:text-clay">Terms of service</a></li></ul></div>
+      <div><h4 class="text-soil font-bold mb-3">Contact</h4><ul class="space-y-2"><li>📞 +880 1712345678</li><li>✉️ mailme@farmora.com</li><li>🕘 Sat–Thu, 9am–8pm</li></ul></div>
+    </div>
+    <div class="border-t border-soil/10 text-center text-xs py-5 px-4">© <span id="yr"></span> Farmora. All rights reserved. Photos courtesy of <a class="underline" href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> photographers.</div>
+  </footer>
+
+  <!-- CART -->
+  <div id="overlay" class="fixed inset-0 bg-black/50 z-50 hidden"></div>
+  <aside id="cart" class="fixed top-0 right-0 h-full w-full max-w-md bg-paper z-50 translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex items-center justify-between px-5 h-16 bg-palm text-paper">
+      <h3 class="font-display text-xl font-bold">Your Basket</h3>
+      <button id="closeCart" class="p-2 text-2xl leading-none" aria-label="Close">×</button>
+    </div>
+    <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-4"></div>
+    <div class="border-t-2 border-soil/10 p-5 space-y-3">
+      <div class="flex justify-between text-lg font-bold"><span>Total</span><span id="cartTotal">৳0</span></div>
+      <button id="checkout" class="w-full bg-palm hover:bg-palmdark text-paper font-bold py-3 rounded-full transition">Checkout</button>
+      <button id="clearCart" class="w-full text-sm underline text-soil/60">Clear basket</button>
+    </div>
+  </aside>
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-soil text-paper text-sm font-semibold px-5 py-3 rounded-full shadow-xl z-[60] opacity-0 pointer-events-none transition-opacity"></div>
+
+  <script>
+    // ============ IMAGES ============
+    // Dates: direct Unsplash image links. Rural scenes: Unsplash download links.
+    const dateImg  = id => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=75`;
+    const ruralImg = id => `https://unsplash.com/photos/${id}/download?force=true&w=1600`;
+
+    // ============ PRODUCTS: edit here ============
+    const CURRENCY = '৳';
+    const dates = [
+      { id: 1,  name: 'Ajwa',        type: 'Soft',     sweet: 3, price: 2400, from: 'Madinah region',   taste: 'Mild, fruity, slightly dry finish', use: 'Eating plain, gifting',        tag: 'Premium',   img: '1629738601425-494c3d6ba3e2' },
+      { id: 2,  name: 'Medjool',     type: 'Soft',     sweet: 5, price: 1800, from: 'Jordan Valley',    taste: 'Rich caramel, honey',               use: 'Snacking, stuffing, shakes',  tag: 'Best Seller', img: '1633677491262-0a51b9851f46' },
+      { id: 3,  name: 'Sukkari',     type: 'Soft',     sweet: 5, price: 1400, from: 'Qassim, Saudi',    taste: 'Very sweet, melt-in-mouth',          use: 'Dessert, iftar',              tag: 'Fan Favorite', img: '1679949499517-1ce03d17f20b' },
+      { id: 4,  name: 'Khalas',      type: 'Soft',     sweet: 4, price: 1100, from: 'Al-Ahsa, Saudi',   taste: 'Caramel, buttery',                  use: 'Everyday eating',             tag: '',          img: '1648178630847-b857b1a6f45d' },
+      { id: 5,  name: 'Safawi',      type: 'Soft',     sweet: 3, price: 1200, from: 'Madinah region',   taste: 'Soft, mildly sweet',                use: 'Breakfast, iftar',            tag: '',          img: '1648288718348-4b6d53755716' },
+      { id: 6,  name: 'Mabroom',     type: 'Semi-dry', sweet: 3, price: 1700, from: 'Madinah region',   taste: 'Chewy, deep and earthy',            use: 'Snacking, baking',            tag: '',          img: '1691657917109-c6e027eac44a' },
+      { id: 7,  name: 'Deglet Noor', type: 'Semi-dry', sweet: 3, price: 700,  from: 'Tunisia / Algeria', taste: 'Nutty, delicate sweetness',         use: 'Baking, salads, cooking',     tag: 'Value',     img: '1649335889120-4084d7456c7c' },
+      { id: 8,  name: 'Barhi',       type: 'Fresh',    sweet: 4, price: 1300, from: 'Iraq / Saudi',     taste: 'Honeyed, crisp when fresh',         use: 'Fresh eating in season',      tag: 'Seasonal',  img: '1642073537056-20608544f111' },
+      { id: 9,  name: 'Amber',       type: 'Soft',     sweet: 4, price: 2000, from: 'Madinah region',   taste: 'Large, soft, toffee-like',          use: 'Gifting, snacking',           tag: 'Premium',   img: '1700478934431-72290fbfa893' },
+      { id: 10, name: 'Mazafati',    type: 'Soft',     sweet: 4, price: 900,  from: 'Bam, Iran',        taste: 'Juicy, moist, syrupy',              use: 'Smoothies, desserts',         tag: '',          img: '1663505305791-87f2248df4ae' },
+      { id: 11, name: 'Khudri',      type: 'Semi-dry', sweet: 3, price: 650,  from: 'Saudi Arabia',     taste: 'Mild, firm, lightly sweet',         use: 'Everyday, budget-friendly',   tag: 'Value',     img: '1663505305206-3b813471a568' },
+      { id: 12, name: 'Zahidi',      type: 'Semi-dry', sweet: 2, price: 600,  from: 'Iraq / Iran',      taste: 'Firm, light, golden sweetness',     use: 'Baking, trail mix',           tag: '',          img: '1537201872643-ff006e1f016f' },
+    ];
+    const price500 = p => Math.round(p * 0.55 / 10) * 10;   // 500g pack price
+    // ==============================================
+
+    const $ = s => document.querySelector(s);
+    const fmt = n => CURRENCY + n.toLocaleString('en-US');
+    let cart = []; try { cart = JSON.parse(localStorage.getItem('farmora-cart') || '[]'); } catch (e) {}
+    let typeFilter = 'All', query = '', sortBy = 'featured';
+    const save = () => { try { localStorage.setItem('farmora-cart', JSON.stringify(cart)); } catch (e) {} };
+
+    // Image loader (hides the <img> on failure so the brown gradient shows instead)
+    function hydrate(root = document) {
+      root.querySelectorAll('img[data-d], img[data-r]').forEach(img => {
+        img.loading = 'lazy'; img.referrerPolicy = 'no-referrer';
+        img.onerror = () => { img.style.display = 'none'; };
+        img.src = img.dataset.d ? dateImg(img.dataset.d) : ruralImg(img.dataset.r);
+        img.removeAttribute('data-d'); img.removeAttribute('data-r');
+      });
+    }
+    let tt; function toast(m) { const t = $('#toast'); t.textContent = m; t.style.opacity = 1; clearTimeout(tt); tt = setTimeout(() => t.style.opacity = 0, 1800); }
+    const dots = n => '●'.repeat(n) + '<span class="opacity-25">' + '●'.repeat(5 - n) + '</span>';
+
+    // Filters
+    function renderFilters() {
+      const types = ['All', 'Soft', 'Semi-dry', 'Fresh'];
+      $('#filters').innerHTML = types.map(t => `<button data-f="${t}" class="px-5 py-2 text-sm font-bold rounded-full border-2 transition ${t === typeFilter ? 'bg-palm text-paper border-palm' : 'bg-white border-soil/15 hover:border-palm'}">${t}</button>`).join('');
+      document.querySelectorAll('#filters button').forEach(b => b.onclick = () => { typeFilter = b.dataset.f; renderFilters(); renderProducts(); });
+    }
+
+    // Products
+    function renderProducts() {
+      let list = dates.filter(d => (typeFilter === 'All' || d.type === typeFilter) && (!query || (d.name + ' ' + d.type + ' ' + d.taste).toLowerCase().includes(query)));
+      if (sortBy === 'low') list.sort((a, b) => a.price - b.price);
+      if (sortBy === 'high') list.sort((a, b) => b.price - a.price);
+      if (sortBy === 'sweet') list.sort((a, b) => b.sweet - a.sweet);
+      $('#resultInfo').textContent = (typeFilter === 'All' && !query) ? '12 varieties, each with its own story and taste.' : `${list.length} variet${list.length === 1 ? 'y' : 'ies'} found`;
+      $('#productGrid').innerHTML = list.length ? list.map(d => `
+        <article class="group bg-white rounded-3xl overflow-hidden border-2 border-soil/10 hover:border-palm hover:shadow-xl transition flex flex-col">
+          <div class="ph relative aspect-square overflow-hidden">
+            <img data-d="${d.img}" alt="${d.name} dates" class="group-hover:scale-110 transition duration-500" />
+            ${d.tag ? `<span class="absolute top-3 left-3 bg-gold text-soil text-[11px] font-bold px-3 py-1 rounded-full">${d.tag}</span>` : ''}
+            <span class="absolute bottom-3 right-3 bg-paper/90 text-[11px] font-bold px-2.5 py-1 rounded-full">${d.type}</span>
+          </div>
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="font-display text-xl font-bold">${d.name}</h3>
+            <p class="text-xs text-soil/50">${d.from}</p>
+            <p class="text-sm text-soil/75 mt-2 flex-1">${d.taste}</p>
+            <p class="mt-2 text-xs text-gold tracking-widest" title="Sweetness ${d.sweet}/5">${dots(d.sweet)} <span class="text-soil/50 tracking-normal">sweetness</span></p>
+            <div class="mt-3 flex items-center gap-2">
+              <select id="pack-${d.id}" class="flex-1 bg-paper border-2 border-soil/15 rounded-full px-3 py-1.5 text-sm focus:outline-none">
+                <option value="500">500g · ${fmt(price500(d.price))}</option>
+                <option value="1000" selected>1kg · ${fmt(d.price)}</option>
+              </select>
+            </div>
+            <button data-add="${d.id}" class="mt-3 w-full bg-palm hover:bg-palmdark text-paper font-bold text-sm py-2.5 rounded-full transition">Add to basket</button>
+          </div>
+        </article>`).join('') : '<p class="col-span-full text-center text-soil/60 py-10">No dates match your search. Try another name.</p>';
+      document.querySelectorAll('[data-add]').forEach(b => b.onclick = () => addDate(+b.dataset.add, $('#pack-' + b.dataset.add).value));
+      hydrate($('#productGrid'));
+    }
+
+    // Guide table
+    $('#guideBody').innerHTML = dates.map(d => `
+      <tr class="hover:bg-paper/60">
+        <td class="p-4 font-bold">${d.name}</td><td class="p-4">${d.type}</td>
+        <td class="p-4 text-gold tracking-widest">${dots(d.sweet)}</td><td class="p-4">${d.taste}</td><td class="p-4">${d.use}</td>
+      </tr>`).join('');
+
+    // Taste cards jump to filtered shop
+    document.querySelectorAll('.tasteCard').forEach(c => c.onclick = () => { typeFilter = c.dataset.type; query = ''; renderFilters(); renderProducts(); $('#shop').scrollIntoView({ behavior: 'smooth' }); });
+
+    // Search & sort
+    function setQuery(v) { query = v.trim().toLowerCase(); typeFilter = 'All'; renderFilters(); renderProducts(); }
+    $('#searchInput').oninput = e => setQuery(e.target.value);
+    $('#searchForm').onsubmit = e => { e.preventDefault(); setQuery($('#searchInput').value); $('#shop').scrollIntoView({ behavior: 'smooth' }); };
+    $('#searchInputM').oninput = e => setQuery(e.target.value);
+    $('#searchToggle').onclick = () => $('#mobileSearch').classList.toggle('hidden');
+    $('#sortSel').onchange = e => { sortBy = e.target.value; renderProducts(); };
+
+    // Cart
+    function lineInfo(i) {
+      if (i.box) return { name: i.box, price: i.price, img: i.img, sub: 'Gift box' };
+      const d = dates.find(x => x.id === i.id); if (!d) return null;
+      return { name: d.name + ' Dates', price: i.pack === '500' ? price500(d.price) : d.price, img: d.img, sub: i.pack === '500' ? '500g' : '1kg' };
+    }
+    function addDate(id, pack) {
+      const key = id + '|' + pack; const it = cart.find(i => i.key === key);
+      it ? it.qty++ : cart.push({ key, id, pack, qty: 1 });
+      afterAdd(dates.find(d => d.id === id).name + ' added');
+    }
+    function addBox(name, price, img) {
+      const key = 'box|' + name; const it = cart.find(i => i.key === key);
+      it ? it.qty++ : cart.push({ key, box: name, price, img, qty: 1 });
+      afterAdd(name + ' added');
+    }
+    function afterAdd(msg) { save(); renderCart(); const b = $('#cartCount'); b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); toast(msg); }
+    function qty(key, d) { const it = cart.find(i => i.key === key); if (!it) return; it.qty += d; if (it.qty <= 0) cart = cart.filter(i => i.key !== key); save(); renderCart(); }
+    function renderCart() {
+      cart = cart.filter(i => lineInfo(i));
+      $('#cartCount').textContent = cart.reduce((s, i) => s + i.qty, 0);
+      $('#cartTotal').textContent = fmt(cart.reduce((s, i) => s + i.qty * lineInfo(i).price, 0));
+      $('#cartItems').innerHTML = cart.length ? cart.map(i => { const l = lineInfo(i), k = JSON.stringify(i.key).replace(/"/g, '&quot;'); return `
+        <div class="flex gap-4 items-center border-b border-soil/10 pb-4">
+          <div class="ph w-16 h-16 rounded-2xl overflow-hidden shrink-0"><img data-d="${l.img}" alt="${l.name}" /></div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-sm truncate">${l.name}</p><p class="text-xs text-soil/60">${l.sub} · ${fmt(l.price)}</p>
+            <div class="mt-1 inline-flex items-center border-2 border-soil/15 rounded-full overflow-hidden bg-white">
+              <button onclick="qty(${k},-1)" class="w-7 h-7 hover:bg-gold/40" aria-label="Decrease">−</button>
+              <span class="w-8 text-center text-sm font-semibold">${i.qty}</span>
+              <button onclick="qty(${k},1)" class="w-7 h-7 hover:bg-gold/40" aria-label="Increase">+</button>
+            </div>
+          </div>
+          <div class="font-bold text-sm">${fmt(l.price * i.qty)}</div>
+        </div>`; }).join('') : '<p class="text-center text-soil/50 mt-10">Your basket is empty.<br/>Pick a few sweet dates 🌴</p>';
+      hydrate($('#cartItems'));
+    }
+    document.querySelectorAll('.boxBtn').forEach(b => b.onclick = () => { const [n, p, im] = b.dataset.box.split('|'); addBox(n, +p, im); });
+    const openCart = () => { $('#cart').classList.remove('translate-x-full'); $('#overlay').classList.remove('hidden'); };
+    const closeCart = () => { $('#cart').classList.add('translate-x-full'); $('#overlay').classList.add('hidden'); };
+    $('#cartBtn').onclick = openCart; $('#closeCart').onclick = closeCart; $('#overlay').onclick = closeCart;
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+    $('#clearCart').onclick = () => { cart = []; save(); renderCart(); };
+    $('#checkout').onclick = () => toast(cart.length ? 'Demo only: connect bKash/Nagad or a payment gateway' : 'Your basket is empty');
+
+    // Mobile menu, newsletter
+    const mm = $('#mobileMenu');
+    $('#menuBtn').onclick = () => mm.classList.toggle('hidden');
+    mm.querySelectorAll('a').forEach(a => a.onclick = () => mm.classList.add('hidden'));
+    $('#newsForm').onsubmit = e => { e.preventDefault(); $('#newsMsg').textContent = 'Thank you! You are on the Farmora harvest list 🌴'; e.target.reset(); };
+
+    $('#yr').textContent = new Date().getFullYear();
+    renderFilters(); renderProducts(); renderCart(); hydrate();
+  </script>
+</body>
+</html>
